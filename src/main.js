@@ -6,6 +6,8 @@ var displayDetails = function(entry){
   $(".number-of-consts").html(entry.numberOfConsonants);
   $(".number-of-words").html(entry.numberOfWords);
   $(".number-of-vowels").html(entry.numberOfVowels);
+  $("input#title").val("");
+  $("input#body").val("");
 };
 
 $(document).ready(function() {
@@ -14,8 +16,6 @@ $(document).ready(function() {
     var entry = new Entry();
     var title = $("input#title").val();
     var body = $("input#body").val();
-    $("input#title").html("");
-    $("input#body").html("");
     entry.addTitle(title);
     entry.addBody(body);
     entry.countWords();
