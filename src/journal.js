@@ -54,9 +54,8 @@ Entry.prototype.getTeaser = function() {
     this.teaser.push(this.words[i]);
   }
   var teaserLetters = this.teaser.join(" ").split("");
-  for (i=0; teaserLetters[i] != "."; i++) {
-    if (this.characters[i] != ".") {
-      this.firstSentence += teaserLetters[i];
-    }
+  var punctuation = [".", "!", "?"];
+  for (i=0; !punctuation.includes(teaserLetters[i]); i++) {
+    this.firstSentence += teaserLetters[i];
   }
 };
