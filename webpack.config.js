@@ -30,6 +30,11 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        text: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
       }
     ]
   }
