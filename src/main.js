@@ -2,10 +2,11 @@ import { Entry } from './journal';
 import './styles.css';
 
 var displayDetails = function(entry){
+  $(".teaser").html(entry.firstSentence);
   $(".number-of-consts").html(entry.numberOfConsonants);
   $(".number-of-words").html(entry.numberOfWords);
   $(".number-of-vowels").html(entry.numberOfVowels);
-}
+};
 
 $(document).ready(function() {
   $("form#make-entry").submit(function(event) {
@@ -20,6 +21,7 @@ $(document).ready(function() {
     entry.countWords();
     entry.countVowels();
     entry.countConsonants();
+    entry.getTeaser();
     displayDetails(entry);
   });
 });
