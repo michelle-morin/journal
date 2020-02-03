@@ -15,6 +15,6 @@ Entry.prototype.addBody = function(body) {
 
 Entry.prototype.countWords = function() {
   this.words = this.body.split(" ");
-  this.numberOfWords = this.words.length;
+  this.numberOfWords += this.words.length;
 }
 
