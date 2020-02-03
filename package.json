@@ -9,7 +9,7 @@
     "lint": "eslint src/*.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michelle, Keturah",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
