@@ -53,8 +53,8 @@ Entry.prototype.getTeaser = function() {
   for (var i = 0; i< 8; i++) {
     this.teaser.push(this.words[i]);
   }
-  var teaserLetters = this.teaser.join("").split("");
-  for (i=0; i != "."; i++) {
+  var teaserLetters = this.teaser.join(" ").split("");
+  for (i=0; teaserLetters[i] != "."; i++) {
     if (this.characters[i] != ".") {
       this.firstSentence += teaserLetters[i];
     }
