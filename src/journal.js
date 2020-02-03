@@ -8,6 +8,8 @@ export function Entry() {
   this.numberOfConsonants = 0;
   this.vowels = [];
   this.consonants = [];
+  this.teaser = [];
+  this.firstSentence = "";
 }
 
 Entry.prototype.addTitle = function(title) {
@@ -34,18 +36,27 @@ Entry.prototype.countVowels = function(){
   }
   this.numberOfVowels += this.vowels.length;
 };
+
 Entry.prototype.countConsonants = function(){
   this.characters = this.body.split("");
 
   for (var i = 0; i < this.characters.length; i ++ ) {
     var vowels = ['a', 'e', 'i', 'o', 'u'];
-    if (vowels.includes(this.characters[i])) {
-      
-    } else if(isNaN(this.characters[i])){
-      
-    } else {
+    if (!vowels.includes(this.characters[i]) && this.characters[i] !== " ") {
       this.consonants.push(this.characters[i]);
     }
   }
   this.numberOfConsonants += this.consonants.length;
+};
+
+Entry.prototype.getTeaser = function() {
+  for (var i = 0; i< 8; i++) {
+    this.teaser.push(this.words[i]);
+  }
+  var teaserLetters = this.teaser.join("").split("");
+  for (i=0; i != "."; i++) {
+    if (this.characters[i] != ".") {
+      this.firstSentence += teaserLetters[i];
+    }
+  }
 };
